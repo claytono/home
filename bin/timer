@@ -1,0 +1,67 @@
+#!/usr/bin/perl
+
+use FileHandle;
+use Term::ReadKey;
+
+ReadMode raw;
+
+autoflush STDOUT 1;
+
+my $delay = $ARGV[0];
+
+
+for (my $i = 0; $i < $delay; $i++) {
+  DisplayTimer($delay, $i);
+  my $c = ReadKey 1;
+  if ($c eq 'q') {
+    ReadMode restore;
+    print "\n";
+    exit;
+  }
+  if ($c eq 'p') {
+    ReadKey;
+    next;
+  }
+  last if ($c ne undef);
+}	
+DisplayTimer($delay, $i);
+
+my $restart = undef;
+my $count = $restart;
+while (!$restart) {
+  print "\a" if ($count % 5 == 0);
+  my $c = ReadKey 1;
+  if ($c eq 'q') {
+    ReadMode restore;
+    print "\n";
+    exit;
+  }
+  if ($c eq 'p') {
+    ReadKey;
+    next;
+  }
+  $restart = 1 if ($c ne undef);
+  $count++;
+}
+print "\n";
+
+ReadMode restore;
+
+sub FormatTime {
+  my $time = shift(@_);
+
+  my $hour = int($time / 3600);
+  my $min = int($time % 3600) / 60;
+  my $sec = $time % 60;
+  sprintf("%02d:%02d:%02d", $hour, $min, $sec);
+}
+
+sub DisplayTimer {
+  my ($total, $elapsed) = @_;
+
+  printf("\rtotal: %s  elapsed: %s  left: %s", 
+	 FormatTime($total), 
+	 FormatTime($elapsed),
+	 FormatTime($total - $elapsed),
+	 );
+}
