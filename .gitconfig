@@ -1,0 +1,9 @@
+[user]
+	name = Clayton O'Neill
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[alias]
+ci = commit
+st = status
