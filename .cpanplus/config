@@ -1,0 +1,134 @@
+###############################################
+###           CPANPLUS::Config              ###
+###  Configuration structure for CPANPLUS   ###
+###############################################
+
+#last changed: Mon Apr 24 06:53:52 2006 GMT
+
+### minimal pod, so you can find it with perldoc -l, etc
+=pod
+
+=head1 NAME
+
+CPANPLUS::Config
+
+=head1 DESCRIPTION
+
+This is your CPANPLUS configuration file. Editing this
+config changes the way CPANPLUS will behave
+
+=cut
+
+package CPANPLUS::Config;
+
+$VERSION = "0.050_04";
+
+$MIN_CPANPLUS_VERSION = "0.050_03";
+
+use strict;
+
+sub new {
+    my $class = shift;
+
+    my $conf = {
+                 '_fetch' => {
+                               'blacklist' => [
+                                                'ftp'
+                                              ]
+                             },
+                 '_daemon' => {
+                                'password' => '',
+                                'port' => '1337',
+                                'username' => 'cpanplus'
+                              },
+                 'conf' => {
+                             'hosts' => [
+                                          {
+                                            'path' => '/mirrors/CPAN/',
+                                            'scheme' => 'rsync',
+                                            'host' => 'mirrors.kernel.org'
+                                          },
+                                          {
+                                            'path' => '/CPAN/',
+                                            'scheme' => 'ftp',
+                                            'host' => 'archive.progeny.com'
+                                          },
+                                          {
+                                            'path' => '/CPAN/',
+                                            'scheme' => 'http',
+                                            'host' => 'www.perl.com'
+                                          }
+                                        ],
+                             'verbose' => 1,
+                             'storable' => 1,
+                             'skiptest' => 0,
+                             'makeflags' => '',
+                             'fetchdir' => '',
+                             'email' => 'cpanplus@example.com',
+                             'dist_type' => '',
+                             'timeout' => 30,
+                             'lib' => [],
+                             'debug' => 0,
+                             'makemakerflags' => '',
+                             'prefer_makefile' => 0,
+                             'prefer_bin' => 0,
+                             'shell' => 'CPANPLUS::Shell::Default',
+                             'base' => '/home/coneill/.cpanplus',
+                             'extractdir' => '',
+                             'no_update' => 0,
+                             'buildflags' => '',
+                             'force' => 0,
+                             'prereqs' => '2',
+                             'cpantest' => 0,
+                             'signature' => 0,
+                             'flush' => 1,
+                             'allow_build_interactivity' => 1,
+                             'passive' => 1,
+                             'md5' => 1
+                           },
+                 'program' => {
+                                'perl' => '',
+                                'make' => '/sw/bin/make',
+                                'editor' => '/sw/bin/emacs',
+                                'sudo' => '',
+                                'shell' => '/bin/bash',
+                                'pager' => '/sw/bin/less'
+                              },
+                 '_source' => {
+                                'hosts' => 'MIRRORED.BY',
+                                'auth' => '01mailrc.txt.gz',
+                                'stored' => 'sourcefiles',
+                                'dslip' => '03modlist.data.gz',
+                                'update' => '86400',
+                                'mod' => '02packages.details.txt.gz'
+                              },
+                 '_build' => {
+                               'moddir' => 'build/',
+                               'plugins' => 'plugins/',
+                               'startdir' => '/home/coneill/rpm/cpantuba',
+                               'distdir' => 'dist/',
+                               'autdir' => 'authors/',
+                               'sanity_check' => 1,
+                               'autobundle_prefix' => 'Snapshot',
+                               'autobundle' => 'autobundle/'
+                             },
+                 '_mirror' => {
+                                'base' => 'authors/id/',
+                                'auth' => 'authors/01mailrc.txt.gz',
+                                'dslip' => 'modules/03modlist.data.gz',
+                                'mod' => 'modules/02packages.details.txt.gz'
+                              },
+                 '_dist' => {
+                              'CPANPLUS::Dist::MM' => 1,
+                              'CPANPLUS::Dist::Build' => 1
+                            }
+    };
+
+    bless($conf, $class);
+    return $conf;
+
+} #new
+
+
+1;
+
