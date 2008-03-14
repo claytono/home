@@ -30,34 +30,34 @@ if [ -d /opt/local/man ]; then
   export MANPATH
 fi
 
-if which joe >/dev/null; then
-  SVN_EDITOR=`which joe`
+if type -p joe >/dev/null; then
+  SVN_EDITOR=`type -p joe`
   SVN_EDITOR="$SVN_EDITOR -wordwrap"
-  VISUAL=`which joe`
-  EDITOR=`which joe`
-elif which emacs >/dev/null; then
-  VISUAL=`which emacs`
-  EDITOR=`which emacs`
-elif which xemacs >/dev/null; then
-  VISUAL=`which xemacs
-  EDITOR=`which xemacs
-elif which vim >/dev/null; then
-  VISUAL=`which vim`
-  EDITOR=`which vim`
+  VISUAL=`type -p joe`
+  EDITOR=`type -p joe`
+elif type -p emacs >/dev/null; then
+  VISUAL=`type -p emacs`
+  EDITOR=`type -p emacs`
+elif type -p xemacs >/dev/null; then
+  VISUAL=`type -p xemacs
+  EDITOR=`type -p xemacs
+elif type -p vim >/dev/null; then
+  VISUAL=`type -p vim`
+  EDITOR=`type -p vim`
 else
-  VISUAL=`which vi`
-  EDITOR=`which vi`
+  VISUAL=`type -p vi`
+  EDITOR=`type -p vi`
 fi
 
 export VISUAL
 export EDITOR
 export SVN_EDITOR
 
-if which colordiff >/dev/null; then
-  SVKDIFF=`which colordiff`
+if type -p colordiff >/dev/null; then
+  SVKDIFF=`type -p colordiff`
   SVKDIFF="$SVKDIFF -u" 
   export SVKDIFF
-  alias diff=`which colordiff`
+  alias diff=`type -p colordiff`
 fi
 
 AIRPORTCMD="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport"
