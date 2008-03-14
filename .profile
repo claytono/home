@@ -57,7 +57,7 @@ if which colordiff >/dev/null; then
   SVKDIFF=`which colordiff`
   SVKDIFF="$SVKDIFF -u" 
   export SVKDIFF
-  alias diff=$i/colordiff
+  alias diff=`which colordiff`
 fi
 
 AIRPORTCMD="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport"
