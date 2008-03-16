@@ -33,6 +33,7 @@ fi
 if type -p joe >/dev/null; then
   SVN_EDITOR=`type -p joe`
   SVN_EDITOR="$SVN_EDITOR -wordwrap"
+  GIT_EDITOR=$SVN_EDITOR
   VISUAL=`type -p joe`
   EDITOR=`type -p joe`
 elif type -p emacs >/dev/null; then
@@ -52,6 +53,7 @@ fi
 export VISUAL
 export EDITOR
 export SVN_EDITOR
+export GIT_EDITOR
 
 if type -p colordiff >/dev/null; then
   SVKDIFF=`type -p colordiff`
