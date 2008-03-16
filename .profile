@@ -65,3 +65,6 @@ if [ -x $AIRPORTCMD ]; then
   alias airport=$AIRPORTCMD
 fi
 
+if type -p w >/dev/null; then
+  w
+fi
