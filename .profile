@@ -71,4 +71,6 @@ if type -p w >/dev/null; then
   w
 fi
 
-alias ls='ls --color=auto -F --dereference-command-line-symlink-to-dir'
+if ls --version 2>/dev/null|grep GNU >/dev/null 2>&1; then
+  alias ls='ls --color=auto -F --dereference-command-line-symlink-to-dir'
+fi
