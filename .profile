@@ -70,3 +70,5 @@ fi
 if type -p w >/dev/null; then
   w
 fi
+
+alias ls='ls --color=auto -F --dereference-command-line-symlink-to-dir'
