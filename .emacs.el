@@ -164,6 +164,11 @@
 (autoload 'tuareg-mode "tuareg" "Major mode for editing Caml code" t)
 (autoload 'camldebug "camldebug" "Run the Caml debugger" t)
 
+; css mode
+(autoload 'css-mode "css-mode" "Mode for editing CSS files" t)
+(setq auto-mode-alist (append '(("\\.css$" . css-mode))
+                              auto-mode-alist))
+
 ; ruby-mode
 (autoload 'ruby-mode "ruby-mode"
   "Mode for editing ruby source files" t)
