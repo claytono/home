@@ -7,3 +7,4 @@
 [alias]
 ci = commit
 st = status
+pull-home = pull git://clayton.oneill.net/home master
