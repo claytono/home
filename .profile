@@ -79,3 +79,9 @@ fi
 if $LS --version 2>/dev/null|grep GNU >/dev/null 2>&1; then
   alias ls="$LS --color=auto -F --dereference-command-line-symlink-to-dir"
 fi
+
+if [ -n "$BASH" ]; then
+  shopt -s checkwinsize checkhash histappend mailwarn
+  HISTFILESIZE=5000
+fi
+
