@@ -170,6 +170,12 @@
 (setq auto-mode-alist (append '(("\\.css$" . css-mode))
                               auto-mode-alist))
 
+; lua-mode
+(autoload 'lua-mode "lua-mode"
+  "Mode for editing lua source files" t)
+(setq auto-mode-alist
+      (append '(("\\.lua$" . lua-mode)) auto-mode-alist))
+
 ; ruby-mode
 (autoload 'ruby-mode "ruby-mode"
   "Mode for editing ruby source files" t)
