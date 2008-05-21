@@ -101,6 +101,7 @@
 (setq cperl-info-on-command-no-prompt t)
 (setq cperl-electric-keywords t)
 (setq cperl-continued-statement-offset 0)
+(add-to-list 'auto-mode-alist '("\\.t$" . cperl-mode))
 
 ;; Disable color output from Test::Class (and anything else that uses
 ;; Term::ANSIColor
