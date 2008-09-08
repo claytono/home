@@ -102,6 +102,7 @@
 (setq cperl-info-on-command-no-prompt t)
 (setq cperl-electric-keywords t)
 (setq cperl-continued-statement-offset 0)
+(add-to-list 'auto-mode-alist '("\\.t$" . cperl-mode))
 
 ;; Disable color output from Test::Class (and anything else that uses
 ;; Term::ANSIColor
@@ -169,6 +170,12 @@
 (autoload 'css-mode "css-mode" "Mode for editing CSS files" t)
 (setq auto-mode-alist (append '(("\\.css$" . css-mode))
                               auto-mode-alist))
+
+; lua-mode
+(autoload 'lua-mode "lua-mode"
+  "Mode for editing lua source files" t)
+(setq auto-mode-alist
+      (append '(("\\.lua$" . lua-mode)) auto-mode-alist))
 
 ; ruby-mode
 (autoload 'ruby-mode "ruby-mode"

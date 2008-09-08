@@ -25,10 +25,12 @@ done
 
 export PATH
 
-if [ -d /opt/local/man ]; then 
-  MANPATH="/opt/local/man:$MANPATH"
-  export MANPATH
-fi
+for i in /opt/local/man /usr/local/man; do
+  if [ -d $i ]; then 
+    MANPATH="$i:$MANPATH"
+    export MANPATH
+  fi
+done
 
 if type -p joe >/dev/null; then
   SVN_EDITOR=`type -p joe`
