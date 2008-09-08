@@ -49,6 +49,7 @@
 (transient-mark-mode t)
 (show-paren-mode t)
 (setq-default indent-tabs-mode nil)
+(setq compilation-scroll-output t)
 
 ; this makes / or ~ erase everything in the file selection mini-buffer
 (require 'minibuf-electric-gnuemacs)
