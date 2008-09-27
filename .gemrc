@@ -1,0 +1,5 @@
+gemhome: $HOME/.gems
+gempath: 
+ - $HOME/.gems
+ - /sw/lib/ruby/gems/1.8
+ - /opt/local/lib/ruby/gems/1.8

@@ -87,3 +87,6 @@ if [ -n "$BASH" ]; then
   HISTFILESIZE=5000
 fi
 
+export GEM_HOME=$HOME/.gems
+export GEM_PATH=$HOME/.gems:/sw/lib/ruby/gems/1.8/:/opt/local/lib/ruby/gems/1.8
+
