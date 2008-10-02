@@ -1,4 +1,4 @@
-%_topdir /home/coneill/rpm/
+%_topdir /home/coneill/rpm
 %_packagedir /home/coneill/rpm/%{name}
 %_sourcedir %{_packagedir}/
 %_specdir %{_packagedir}/
