@@ -1,5 +1,5 @@
-gemhome: $HOME/.gems
+gemhome: /home/coneill/.gems
 gempath: 
- - $HOME/.gems
+ - /home/coneill/.gems
  - /sw/lib/ruby/gems/1.8
  - /opt/local/lib/ruby/gems/1.8
