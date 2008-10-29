@@ -171,6 +171,12 @@
 (setq auto-mode-alist (append '(("\\.css$" . css-mode))
                               auto-mode-alist))
 
+; puppet-mode
+(autoload 'puppet-mode "puppet-mode"
+  "Mode for editing puppet source files" t)
+(setq auto-mode-alist
+      (append '(("\\.pp$" . puppet-mode)) auto-mode-alist))
+
 ; lua-mode
 (autoload 'lua-mode "lua-mode"
   "Mode for editing lua source files" t)
