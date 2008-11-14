@@ -182,6 +182,9 @@
   "Mode for editing graphviz source files" t)
 (setq auto-mode-alist
       (append '(("\\.dot$" . graphviz-dot-mode)) auto-mode-alist))
+(setq graphviz-dot-auto-indent-on-newline nil)
+(setq graphviz-dot-auto-indent-on-braces nil)
+(setq graphviz-dot-auto-indent-on-semi nil)
 
 ; lua-mode
 (autoload 'lua-mode "lua-mode"
