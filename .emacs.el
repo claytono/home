@@ -177,6 +177,12 @@
 (setq auto-mode-alist
       (append '(("\\.pp$" . puppet-mode)) auto-mode-alist))
 
+; graphviz-mode
+(autoload 'graphviz-dot-mode "graphviz-dot-mode"
+  "Mode for editing graphviz source files" t)
+(setq auto-mode-alist
+      (append '(("\\.dot$" . graphviz-dot-mode)) auto-mode-alist))
+
 ; lua-mode
 (autoload 'lua-mode "lua-mode"
   "Mode for editing lua source files" t)
