@@ -14,6 +14,7 @@ done
 APPEND=""
 if [ `uname` = "Darwin" ]; then
   APPEND="/usr/local/bin"
+  alias top="top -u"
 fi 
 
 for i in $APPEND; do 
