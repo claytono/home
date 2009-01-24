@@ -1,0 +1,3 @@
+[submodule ".emacs/magit.git"]
+	path = .emacs/magit.git
+	url = git://gitorious.org/magit/mainline.git
