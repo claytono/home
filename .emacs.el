@@ -105,6 +105,12 @@
 (setq cperl-continued-statement-offset 0)
 (add-to-list 'auto-mode-alist '("\\.t$" . cperl-mode))
 
+(require 'cmake-mode)
+(setq auto-mode-alist
+      (append '(("CMakeLists\\.txt\\'" . cmake-mode)
+                ("\\.cmake\\'" . cmake-mode))
+              auto-mode-alist))
+
 ;; Disable color output from Test::Class (and anything else that uses
 ;; Term::ANSIColor
 (setenv "ANSI_COLORS_DISABLED" "1")
