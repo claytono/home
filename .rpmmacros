@@ -1,5 +1,6 @@
 %_topdir /home/coneill/rpm
 %_packagedir /home/coneill/rpm/%{name}
 %_sourcedir %{_packagedir}/
+%_srcrpmdir %{_packagedir}/
 %_specdir %{_packagedir}/
 %_tmppath /home/coneill/tmp
