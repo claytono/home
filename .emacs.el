@@ -212,6 +212,13 @@
           '(lambda ()
             (inf-ruby-keys)))
 
+(autoload 'snmp-mode "snmp-mode"
+  "Mode for editing SNMP mibs" t)
+(setq auto-mode-alist
+      (append '(("\\.my"  . snmp-mode)
+                ("\\.mib" . snmp-mode))
+              auto-mode-alist))
+
 ; Reload all buffers from disk
 (defun revert-all-buffers()
   "Refreshs all open buffers from their respective files"
