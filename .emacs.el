@@ -4,9 +4,6 @@
 (add-to-list 'load-path "~/.emacs/tuareg-mode")
 (add-to-list 'load-path "~/.emacs/ruby")
 (add-to-list 'load-path "~/.emacs/muse/lisp")
-(add-to-list 'load-path "~/.emacs/magit.git")
-
-(require 'magit)
 
 ; Open all files in unix mode, not dos.
 (add-hook 'find-file-hook 'find-file-check-line-endings)
