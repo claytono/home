@@ -4,9 +4,6 @@
 (add-to-list 'load-path "~/.emacs/tuareg-mode")
 (add-to-list 'load-path "~/.emacs/ruby")
 (add-to-list 'load-path "~/.emacs/muse/lisp")
-(add-to-list 'load-path "~/.emacs/magit.git")
-
-(require 'magit)
 
 ; Open all files in unix mode, not dos.
 (add-hook 'find-file-hook 'find-file-check-line-endings)
@@ -203,7 +200,8 @@
 (autoload 'ruby-mode "ruby-mode"
   "Mode for editing ruby source files" t)
 (setq auto-mode-alist
-      (append '(("\\.rb$" . ruby-mode)) auto-mode-alist))
+      (append '(("\\.rb$" . ruby-mode)
+                ("Rakefile$" . ruby-mode)) auto-mode-alist))
 (setq interpreter-mode-alist (append '(("ruby" . ruby-mode))
                                      interpreter-mode-alist))
 (autoload 'run-ruby "inf-ruby"
@@ -213,6 +211,13 @@
 (add-hook 'ruby-mode-hook
           '(lambda ()
             (inf-ruby-keys)))
+
+(autoload 'snmp-mode "snmp-mode"
+  "Mode for editing SNMP mibs" t)
+(setq auto-mode-alist
+      (append '(("\\.my"  . snmp-mode)
+                ("\\.mib" . snmp-mode))
+              auto-mode-alist))
 
 ; Reload all buffers from disk
 (defun revert-all-buffers()
