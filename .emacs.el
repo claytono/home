@@ -3,7 +3,6 @@
 (add-to-list 'load-path "~/.emacs/nxml-mode")
 (add-to-list 'load-path "~/.emacs/tuareg-mode")
 (add-to-list 'load-path "~/.emacs/ruby")
-(add-to-list 'load-path "~/.emacs/muse/lisp")
 
 ; Open all files in unix mode, not dos.
 (add-hook 'find-file-hook 'find-file-check-line-endings)
@@ -40,7 +39,6 @@
 (global-set-key "\M-j" 'join-line)
 
 (setq inhibit-startup-message t)
-(tool-bar-mode -1)
 (line-number-mode t)
 (column-number-mode t)
 (display-time)
@@ -57,13 +55,6 @@
 (add-to-list 'auto-mode-alist '("\\.\\(docbook\\|xml\\|xsl\\|rng\\|xhtml\\)\\'"
                          . nxml-mode))
 (add-to-list 'auto-mode-alist '("\\(\\.yml\\|\\.yaml\\)" . yaml-mode))
-
-;(require 'muse-mode)     ; load authoring mode
-;(require 'muse-html)     ; load publishing styles I use
-;(require 'muse-latex)
-;(require 'muse-texinfo)
-;(require 'muse-docbook)
-;(require 'muse-project)  ; publish files in projects
 
 (require 'tramp)
 (if (eq window-system 'w32)
