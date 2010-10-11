@@ -1,5 +1,0 @@
-gemhome: /home/coneill/.gems
-gempath: 
- - /home/coneill/.gems
- - /sw/lib/ruby/gems/1.8
- - /opt/local/lib/ruby/gems/1.8
