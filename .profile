@@ -92,6 +92,7 @@ if grep -V 2>&1 | grep GNU >/dev/null 2>&1; then
   alias grep="grep --color=auto"
 fi
 
-export GEM_HOME=$HOME/.gems
-export GEM_PATH=$HOME/.gems:/sw/lib/ruby/gems/1.8/:/opt/local/lib/ruby/gems/1.8
+if [[ -x /opt/local/bin ]]; then
+  alias port="sudo port"
+fi
 
