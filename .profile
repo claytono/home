@@ -35,7 +35,7 @@ done
 
 if type -p joe >/dev/null; then
   SVN_EDITOR=`type -p joe`
-  SVN_EDITOR="$SVN_EDITOR -wordwrap +1"
+  SVN_EDITOR="$SVN_EDITOR -wordwrap +1 -syntax diff"
   GIT_EDITOR=$SVN_EDITOR
   VISUAL=`type -p joe`
   EDITOR=`type -p joe`
