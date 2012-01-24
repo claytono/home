@@ -88,3 +88,8 @@ if [[ -x /opt/local/bin ]]; then
 fi
 
 [[ -s "/Users/coneill/.rvm/scripts/rvm" ]] && source "/Users/coneill/.rvm/scripts/rvm"
+
+if [[ -x /sw/bin/osc ]]; then
+  alias oscb='time /sw/bin/osc build --local --no-verify --ccache'
+  alias oscr='while true; do osc r; sleep 10; echo; done'
+fi

@@ -6,7 +6,7 @@ defobuflimit 4096
 
 defshell -/bin/bash
 
-termcapinfo xterm|screen 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+#termcapinfo xterm|screen 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
 
 bind '!' select 10
 bind '@' select 11
