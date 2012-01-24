@@ -3,26 +3,17 @@ if [ `uname` = 'Darwin' ]; then
 fi
 
 # prepend
-for i in /opt/local/bin /opt/local/sbin $HOME/bin; do 
+for i in $HOME/bin; do
   echo $PATH | grep -q -s $i
   if [ $? -eq 1 ] ; then
     PATH="$i:$PATH"
   fi
 done
 
-# append
-APPEND=""
 if [ `uname` = "Darwin" ]; then
-  APPEND="/usr/local/bin"
+  PATH="/usr/local/bin:/usr/local/sbin:$PATH"
   alias top="top -u"
 fi 
-
-for i in $APPEND; do 
-  echo $PATH | grep -q -s $i
-  if [ $? -eq 1 ] ; then
-    PATH="$PATH:$i"
-  fi
-done
 
 export PATH
 
@@ -96,3 +87,4 @@ if [[ -x /opt/local/bin ]]; then
   alias port="sudo port"
 fi
 
+[[ -s "/Users/coneill/.rvm/scripts/rvm" ]] && source "/Users/coneill/.rvm/scripts/rvm"
