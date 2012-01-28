@@ -49,6 +49,8 @@ export EDITOR
 export SVN_EDITOR
 export GIT_EDITOR
 
+export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
+
 if type -p colordiff >/dev/null; then
   SVKDIFF=`type -p colordiff`
   SVKDIFF="$SVKDIFF -u" 
