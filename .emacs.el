@@ -187,6 +187,12 @@
 (setq auto-mode-alist
       (append '(("\\.lua$" . lua-mode)) auto-mode-alist))
 
+; markdown-mode
+(autoload 'markdown-mode "markdown-mode"
+  "Mode for editing markdown source files" t)
+(setq auto-mode-alist
+      (append '(("\\.md$" . markdown-mode)) auto-mode-alist))
+
 ; ruby-mode
 (autoload 'ruby-mode "ruby-mode"
   "Mode for editing ruby source files" t)
