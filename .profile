@@ -51,11 +51,11 @@ export GIT_EDITOR
 
 export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
 
-if type -p colordiff >/dev/null; then
-  SVKDIFF=`type -p colordiff`
-  SVKDIFF="$SVKDIFF -u" 
-  export SVKDIFF
-  alias diff=`type -p colordiff`
+if echo $TERM|grep -q 256color; then
+  infocmp $TERM >/dev/null 2>&1
+  if [ $? -ne 0 ]; then
+    export TERMINFO=$HOME/.terminfo
+  fi
 fi
 
 AIRPORTCMD="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport"
