@@ -94,6 +94,7 @@ fi
 if [[ -x /sw/bin/osc ]]; then
   alias oscb='time /sw/bin/osc build --local --no-verify --ccache'
   alias oscr='while true; do osc r; sleep 10; echo; done'
+  export OSC_BUILD_ROOT="/var/tmp/build-root-%(repo)s-%(arch)s"
 fi
 
 alias mkgit='git init .; git add .; git commit -qm.'
