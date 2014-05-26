@@ -1,7 +1,3 @@
-if [ `uname` = 'Darwin' ]; then
-  test -r /sw/bin/init.sh && . /sw/bin/init.sh
-fi
-
 # prepend
 for i in $HOME/bin; do
   echo $PATH | grep -q -s $i
@@ -83,10 +79,6 @@ fi
 
 if grep -V 2>&1 | grep GNU >/dev/null 2>&1; then
   alias grep="grep --color=auto"
-fi
-
-if [[ -x /opt/local/bin ]]; then
-  alias port="sudo port"
 fi
 
 [[ -s "/Users/coneill/.rvm/scripts/rvm" ]] && source "/Users/coneill/.rvm/scripts/rvm"
