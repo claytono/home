@@ -1,8 +1,19 @@
 [user]
 	name = Clayton O'Neill
 	email = clayton@oneill.net
+
 [color]
 	diff = auto
 	status = auto
 	branch = auto
+	ui = auto
+
 [alias]
+	lg = log --oneline --graph --all --decorate --abbrev-commit
+
+[gitreview]
+	username = coneill
+[branch]
+	autosetuprebase = always
+[log]
+	decorate = true
