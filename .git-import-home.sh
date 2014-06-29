@@ -18,3 +18,9 @@ git remote add origin https://github.com/dvorak/home.git
 git fetch --all
 git reset --hard origin/master
 
+if type -p vim; then
+    if type -p update-alternatives; then
+        update-alternatives --set editor /usr/bin/vim.basic
+    fi
+    vim +PluginInstall +qall
+fi

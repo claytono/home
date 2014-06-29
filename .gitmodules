@@ -1,3 +1,6 @@
 [submodule ".emacs/magit.git"]
 	path = .emacs/magit.git
 	url = git://gitorious.org/magit/mainline.git
+[submodule "/root/.vim/bundle/vundle"]
+	path = /root/.vim/bundle/vundle
+	url = http://github.com/gmarik/vundle.git
